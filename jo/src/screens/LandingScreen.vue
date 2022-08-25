@@ -26,7 +26,49 @@
     </div>
     <img src='../assets/articleImg.png' class='article__img' />
     </article>
-    <div class='steps'></div>
+    <div class='steps'>
+        <h1 class='steps__h1'>этапы разработки - от оформления заказа до получения рабочего сайта </h1>
+        <div class='steps__cards'>
+            <div class='cards__card'>
+                <p claass='card__num'>|</p>
+                <div class='card__wrap'>
+                    <img src='../assets/steps__img1.png' class='card__img card__img--1'/>
+                    <h2 class='card__h2'>оформление закака</h2>
+                    <ul class='card__ul'>
+                        <li class='card__li'>учтём все нюансы</li>
+                        <li class='card__li'>договоримся о сроках</li>
+                        <li class='card__li'>назначим исполнителя</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='steps__arrow'>=></div>
+            <div class='steps__card'>
+                <p claass='card__num'>||</p>
+                <div class='card__wrap'>
+                    <img src='../assets/steps__img2.png' class='card__img'/>
+                    <h2 class='card__h2'>разработка </h2>
+                    <ul class='card__ul'>
+                        <li class='card__li'>правильная и красивая верстка</li>
+                        <li class='card__li'>продуманный back-end</li>
+                        <li class='card__li'>адаптация под все устройства</li>
+                    </ul>
+                </div>
+            </div>
+            <div class='steps__arrow'>=></div>
+            <div class='steps__card'>
+                <p claass='card__num'>sss</p>
+                <div class='card__wrap'>
+                    <img src='../assets/steps__img3.png' class='card__img'/>
+                    <h2 class='card__h2'>представление готового проекта</h2>
+                    <ul class='card__ul'>
+                        <li class='card__li'>отчет попроделанной нами работе</li>
+                        <li class='card__li'>корректировка </li>
+                        <li class='card__li'>оплата через безоопасную сделку</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class='form'></div>
     <footer></footer>
 </template>
@@ -100,5 +142,51 @@ data() {
     }
     .article__img{
         width:600px;
+        margin: 0 0 0 150px;
+    }
+    .steps__cards{
+        display: flex;
+        justify-content: space-between;
+        margin: 170px 0 0 0;
+    }
+    .steps{
+        margin-top: 250px;
+        text-align: center;
+        padding: 30px 200px 0 200px;
+    }
+    .card__wrap{
+        border: 1px solid #E7E1E1;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: start;
+    }
+    .card__h2{
+        font-size: 20px;
+        max-width: 250px;
+        margin-left: 35px;
+        color: #234895;
+    }
+    .card__ul{
+        max-width: 240px;
+        font-size: 18px;
+        color: #79A7D3;
+    }
+    .card__img{
+        text-align: center;
+        weight: 400px;
+    }
+    .card__img--1{
+        margin-top: 15px;
+    }
+    .card__li{
+        margin: 0 0 10px 0;
+    }
+    .steps__h1{
+        color: #234895;
+        max-width: 700px;
+        margin:  auto;
+    }
+    .card__num{
+        font-size: 32px;
     }
 </style>
