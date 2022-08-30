@@ -21,7 +21,7 @@ export default {
         width: 500px;
         display: inline-block;
         border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0,0,0,0.5);
+        box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
     .reviewBlock__name{
         border-bottom: 1px solid #DFDFDF;

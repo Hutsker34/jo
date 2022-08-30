@@ -6,7 +6,7 @@
         <router-link class='header__link'  to="/#yak1">Заказ</router-link>
     </header>
     <article class='article'>
-        <h1 class='article__h1'>Отзывы наших клиентов</h1>
+        <h1 class='article__h1'>Реальные отзывы наших клиентов</h1>
     <div class='article__wrap'>
         <div class='article__wrap--duble'>
         <ReviewBlock  :text = 'musText[0]' :name ='musName[0]'/>

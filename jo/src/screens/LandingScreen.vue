@@ -245,18 +245,18 @@ data() {
         align-items: flex-start
     }
     .form__input{
-        background: #79A7D3;
-        border: none;
+        border: 1px solid #E4E4E4;
         border-radius: 4px;
         width:400px;
         font-size:22px;
         padding: 5px 20px 5px 20px;
         outline: #E4E4E4;
+        box-shadow: 0 0 9px rgba(0,0,0,0.2);
    }
     .form__label--big{
        min-width:600px;
        min-height: 150px;
-       font-size: 12px;
+       font-size: 16px;
         padding-top: 10px;
     }
     .order__h1{
