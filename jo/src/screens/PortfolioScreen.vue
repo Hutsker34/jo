@@ -15,9 +15,12 @@
     <img src='../assets/portfolio__img.png' class='article__img' />
     </article>
     <div class='portfolio__blocks'>
-        <PortfolioBlock/>
-        <PortfolioBlock/>
-        <PortfolioBlock/>
+        <div @click='isPopupOpen = true' class='block'></div>
+        <PortfolioBlock 
+        :is-open='isPopupOpen'
+        @close='isPopupOpen = false'
+        :img = 'imgMus[0]'
+        />
     </div>
     <footer class='footer'></footer>
 </template>
@@ -32,7 +35,10 @@ export default {
     },
     data(){
         return {
-            
+            isPopupOpen: false,   
+            imgMus: [
+                '../../assets/portfolio__img1.png'
+            ]
         }
     },
 }
@@ -55,5 +61,10 @@ export default {
         padding: 30px 200px 0 200px;
         display: flex;
         justify-content: space-between;
+    }
+    .block{
+        width: 100px;
+        height: 100px;
+        background: black;
     }
 </style>

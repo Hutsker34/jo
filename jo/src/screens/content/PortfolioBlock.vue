@@ -1,20 +1,59 @@
 <template>
-    <div class='v-popup'>
-        <slot><img src='../../assets/portfolio__img1.png' class='v-popup__img'/></slot>
+    <div @click ='close' v-if='isOpen' class='v-popup' >
+        <div  class='v-popup__bodu'>
+             <img @click.stop src={{img}} class='v-popup__img'/>
+        </div>
     </div>
 </template>
 <script>
+
 export default {
-    name: 'PortfolioBlock',
     props: {
-        PortfolioBlock: Object
-    }
+        isOpen: {
+            type: Boolean,
+            required: true,
+            
+        },
+        img: String
+    },
+    emits: {
+        close: null,
+    },
+    data(){
+        return{
+           
+        }
+    },
+    methods: {
+        
+        close(){
+            this.$emit('close');
+            console.log(this.isOpen)
+            
+        },
+        
+    },
+    
 }
 </script>
 <style>
     .v-popup{
-        width: 200px;
-        height: 400px;
-        background: black;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: black ;
+        background: rgba(0, 0, 0, 0.8);
+        top: 0;
+        left: 0;
+        padding: 20px 0 0 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
     }
+    .v-popup__bodu{
+        display: flex;
+        justify-content: center;
+   }
+   .v-popup__img{
+        
+   }
 </style>
