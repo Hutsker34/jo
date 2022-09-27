@@ -9,11 +9,11 @@ const port = 3001;
  * https://medium.com/wesionary-team/create-your-first-rest-api-with-node-js-express-and-mongodb-447fce535385
  * @type {string}
  */
-const dbPath = 'mongodb://localhost/testers_gonna_test';
+const dbPath = 'mongodb://localhost/Jo';
 const options = {useNewUrlParser: true, useUnifiedTopology: true};
 const mongo = mongoose.connect(dbPath, options);
 
-const apiRoutes = require('./controller/UserController');
+const apiRoutes = require('./controller/PortfolioController');
 
 mongo.then(() => {
     console.log('connected');

@@ -15,12 +15,84 @@
     <img src='../assets/portfolio__img.png' class='article__img' />
     </article>
     <div class='portfolio__blocks'>
-        <div @click='isPopupOpen = true' class='block'></div>
-        <PortfolioBlock 
-        :is-open='isPopupOpen'
-        @close='isPopupOpen = false'
-        :img = 'imgMus[0]'
-        />
+        <div class='blocks__row'>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+        </div>
+         <div class='blocks__row'>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+        </div>
+         <div class='blocks__row'>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+            <div class='blocks__wrap'>
+                <div @click='isPopupOpen = true' class='block'></div>
+                <PortfolioBlock 
+                :is-open='isPopupOpen'
+                @close='isPopupOpen = false'
+                :img = 'imgMus[0]'
+                />
+            </div>
+        </div>
     </div>
     <footer class='footer'></footer>
 </template>
@@ -60,11 +132,17 @@ export default {
         margin: 180px 0 0 0;
         padding: 30px 200px 0 200px;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
     }
     .block{
         width: 100px;
         height: 100px;
         background: black;
+    }
+    .blocks__row{
+        margin: 50px 0 0 0;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
     }
 </style>

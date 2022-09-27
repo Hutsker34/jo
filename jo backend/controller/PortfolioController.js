@@ -11,24 +11,22 @@ router.get('/', function (req, res) {
     });
 });
 
-//Import Bio Controller
-const bioController = require('../models/Bio');
+//Import Portfolio Controller
+const portfolioController = require('../models/Portfolio');
 
-// Bio routes
+// Portfolio routes
 router.route('/bio')
-    .get(bioController.index)
-    .post(bioController.add);
+    .get(portfolioController.index)
+    .post(portfolioController.add);
 
 router.route('/bio/:bio_id')
-    .get(bioController.getById)
-    .put(bioController.update)
-    .delete(bioController.delete);
+    .get(portfolioController.getById)
 
 /**
  * https://dev.to/eidorianavi/authentication-and-jwt-in-node-js-4i13
  */
 router.post('/login', async (req, res) => {
-    const user = await bioController.findOne({name: req.body.name});
+    const user = await portfolioController.findOne({name: req.body.name});
 
     try {
         const match = await bcrypt.compare(req.body.password, user.password);

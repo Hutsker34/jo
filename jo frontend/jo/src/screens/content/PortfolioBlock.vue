@@ -41,8 +41,7 @@ export default {
         position: fixed;
         width: 100%;
         height: 100%;
-        background: black ;
-        background: rgba(0, 0, 0, 0.8);
+        background: rgba(0, 0, 0, 0.2);
         top: 0;
         left: 0;
         padding: 20px 0 0 20px;
