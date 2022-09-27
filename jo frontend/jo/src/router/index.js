@@ -1,9 +1,8 @@
-import { createWebHistory, createRouter } from "vue-router";
-
-import LandingScreen from "../screens/LandingScreen";
-import PortfolioScreen from "../screens/PortfolioScreen";
-import AboutUsScreen from "../screens/AboutUsScreen";
-import ReviewsScreen from "../screens/ReviewsScreen";
+import { createWebHistory, createRouter } from "vue-router"
+import LandingScreen from "../screens/LandingScreen"
+import PortfolioScreen from "../screens/PortfolioScreen"
+import AboutUsScreen from "../screens/AboutUsScreen"
+import ReviewsScreen from "../screens/ReviewsScreen"
 
 const routes = [
   {
