@@ -3,6 +3,7 @@ import LandingScreen from "../screens/LandingScreen"
 import PortfolioScreen from "../screens/PortfolioScreen"
 import AboutUsScreen from "../screens/AboutUsScreen"
 import ReviewsScreen from "../screens/ReviewsScreen"
+import PortfolioBlockScreen from "../screens/PortfolioBlockScreen"
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/portfolio",
     name: "PortfolioScreen",
     component: PortfolioScreen,
+  },
+  {
+    path: "/portfolioBlock/:id",
+    name: "PortfolioBlockScreen",
+    component: PortfolioBlockScreen,
   },
 ];
 

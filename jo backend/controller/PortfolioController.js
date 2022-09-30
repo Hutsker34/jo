@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { get } = require('../models/Portfolio');
 
 //set default API response
 router.get('/', function (req, res) {
@@ -20,7 +21,8 @@ router.route('/bio')
     .post(portfolioController.add);
 
 router.route('/bio/:bio_id')
-    .get(portfolioController.getById)
+    .get(portfolioController.getById);
+
 
 /**
  * https://dev.to/eidorianavi/authentication-and-jwt-in-node-js-4i13

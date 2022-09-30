@@ -14,104 +14,62 @@
     </div>
     <img src='../assets/portfolio__img.png' class='article__img' />
     </article>
-    <div class='portfolio__blocks'>
-        <div class='blocks__row'>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-        </div>
-         <div class='blocks__row'>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-        </div>
-         <div class='blocks__row'>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-            <div class='blocks__wrap'>
-                <div @click='isPopupOpen = true' class='block'></div>
-                <PortfolioBlock 
-                :is-open='isPopupOpen'
-                @close='isPopupOpen = false'
-                :img = 'imgMus[0]'
-                />
-            </div>
-        </div>
+    <div  class='portfolio__blocks'>
+        <portfolioBlock class='block' :portfolioBlock='item' v-on:click='getPicture(item._id , item)' v-for="(item, index) in blocks" :key="index" />
+        
     </div>
     <footer class='footer'></footer>
 </template>
 <script>
-import PortfolioBlock from '../screens/content/PortfolioBlock'
+import portfolioBlock from '../screens/content/PortfolioBlock'
+import router from '../router'
+import axios from 'axios'
 
+const url = 'http://localhost:3001/api'
 
 export default {
     name: 'PortfolioScreen',
     components: {
-        PortfolioBlock
+        portfolioBlock
     },
     data(){
-        return {
-            isPopupOpen: false,   
-            imgMus: [
-                '../../assets/portfolio__img1.png'
-            ]
+        return {  
+            blocks: [],
+            
         }
+    },
+    methods: {
+        getChats(){
+            axios.get(`${url}/bio`,{
+            }).then(
+                ({data})=>{   
+                    this.blocks = data.data
+                    console.log(data)
+                }
+            )
+        },
+        
+        getPicture(_id , item){
+            axios.get(`${url}/bio/:bio_id`,{
+            }).then(
+                localStorage.setItem('portfoliopic', item.picture),
+                localStorage.setItem('portfolioname', item.name),
+                router.push({ path: `/portfolioBlock/${_id}`, replace: true }),
+                console.log('ttt',item)
+            )
+        },
+        
+
+        changeBgImg(){
+            let block = document.querySelectorAll('.block');
+            block.style.backgroundImage = `url(${})`;
+        }
+
+
+    },
+
+    mounted() {
+        this.getChats()
     },
 }
 </script>
@@ -132,17 +90,14 @@ export default {
         margin: 180px 0 0 0;
         padding: 30px 200px 0 200px;
         display: flex;
-        flex-direction: column;
+        flex-flow: wrap;
+
     }
-    .block{
-        width: 100px;
-        height: 100px;
-        background: black;
+    :root{
+        --picture-background: red;
     }
-    .blocks__row{
-        margin: 50px 0 0 0;
-        display: flex;
-        justify-content: space-around;
-        width: 100%;
+    .block  {
+        background: var(--picture-background)
     }
+    
 </style>

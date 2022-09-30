@@ -11,10 +11,6 @@ const portfolioSchema = mongoose.Schema({
         type : String,
         require: true
     },
-    block_number: {
-        type : Number,
-        require: true
-    },
     created_at: {
         type: Date,
         default: Date.now
@@ -47,7 +43,7 @@ Portfolio.getById = function (req, res) {
     // https://mongoosejs.com/docs/api.html#model_Model.findById
     Portfolio.findById(req.params.bio_id, function (err, portfolio) {
         if (err)
-            res.send(err);
+            return res.send(err);
         res.json({
             message: 'Portfolio Details',
             data: portfolio
@@ -55,11 +51,12 @@ Portfolio.getById = function (req, res) {
     });
 };
 
+
+
 Portfolio.add = async function (req, res) {
     const portfolio = new Portfolio();
     portfolio.name = req.body.name ? req.body.name : portfolio.name;
     portfolio.picture = req.body.picture ? req.body.picture : portfolio.picture;
-
     //Save and check error
     portfolio.save(function (err) {
         if (err)
