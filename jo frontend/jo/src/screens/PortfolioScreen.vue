@@ -60,10 +60,10 @@ export default {
         },
         
 
-        changeBgImg(){
-            let block = document.querySelectorAll('.block');
-            block.style.backgroundImage = `url(${})`;
-        }
+        // changeBgImg(){
+        //     let block = document.querySelectorAll('.block');
+        //     block.style.backgroundImage = `url(${})`;
+        // }
 
 
     },
